@@ -16,7 +16,7 @@
                         <table>
                             <tr>
                                 <td scope="row" style="width: 5%"><img class="mr-2 " src="/img/pin.png" alt="Pin" width="35px" height="35px"></td>
-                                <td th:text="${AllTask.getPriority().getName().getValue().toString()}" style="width: 15%">{priority}</td>
+                                <td th:text="${AllTask.getPriority()}" style="width: 15%">{priority}</td>
                                 <td th:text="|Due Date: ${AllTask.dueDate}" style="width: 40%">{dueDate}</td>
                                 <td><a th:href="@{/tasks/remove/{id}(id=*{AllTask.id})}">
                                     <img src="/img/done-remove-button.png" height="35px"></a></td>
@@ -41,7 +41,7 @@
                             <table>
                                 <tr>
                                     <td style="width: 5%"><img class="mr-2 " src="/img/pin.png" alt="Pin" width="35px" height="35px"></td>
-                                    <td th:text="${AlUnassignedTask.getPriority().getName().getValue().toString()}" style="width: 15%"><a>{priority}</a></td>
+                                    <td th:text="${AlUnassignedTask.getPriority()}" style="width: 15%"><a>{priority}</a></td>
                                     <td><a th:text="|Due Date: ${AlUnassignedTask.dueDate}|" >Due Date: {dueDate}</a></td>
                                     <td><a class="ml-3" th:href="@{/tasks/assign-task/{id}(id=*{AlUnassignedTask.id})}"><img src="/img/assign-to-me-button.png" height="35px"></a></td>
                                 </tr>

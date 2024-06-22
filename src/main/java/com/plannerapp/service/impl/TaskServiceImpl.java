@@ -45,7 +45,7 @@ public class TaskServiceImpl implements TaskService {
     public Set<TaskDTO> findAllUnassignedTasks() {
         return taskRepo.findAllByAssignedToIsNull()
                 .stream()
-                .map(this::mapSongDTO)
+                .map(this::mapTaskDTO)
                 .collect(Collectors.toSet());
     }
 
@@ -53,11 +53,11 @@ public class TaskServiceImpl implements TaskService {
     public Set<TaskDTO> findAllAssignedTasks(Long id) {
         return this.taskRepo.findAllByAssignedToId(id)
                 .stream()
-                .map(this::mapSongDTO)
+                .map(this::mapTaskDTO)
                 .collect(Collectors.toSet());
     }
 
-    private TaskDTO mapSongDTO(Task task) {
+    private TaskDTO mapTaskDTO(Task task) {
         TaskDTO taskDTO = new TaskDTO();
         taskDTO.setId(task.getId());
         taskDTO.setDescription(task.getDescription());
