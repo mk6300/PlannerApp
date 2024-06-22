@@ -1,7 +1,7 @@
 package com.plannerapp.controller;
 
-import com.plannerapp.model.LoginDTO;
-import com.plannerapp.model.RegisterDTO;
+import com.plannerapp.model.dto.LoginDTO;
+import com.plannerapp.model.dto.RegisterDTO;
 import jakarta.validation.Valid;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

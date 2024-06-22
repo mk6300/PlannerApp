@@ -1,7 +1,7 @@
 package com.plannerapp.service.impl;
 
-import com.plannerapp.model.RegisterDTO;
-import com.plannerapp.model.UserDTO;
+import com.plannerapp.model.dto.RegisterDTO;
+import com.plannerapp.model.dto.UserDTO;
 import com.plannerapp.model.entity.User;
 import com.plannerapp.repo.UserRepo;
 import com.plannerapp.service.UserService;
@@ -10,7 +10,6 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service

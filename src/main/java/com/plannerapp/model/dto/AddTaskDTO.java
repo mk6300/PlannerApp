@@ -1,4 +1,4 @@
-package com.plannerapp.model;
+package com.plannerapp.model.dto;
 
 import com.plannerapp.model.entity.PriorityName;
 import jakarta.validation.constraints.Future;

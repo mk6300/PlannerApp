@@ -1,6 +1,7 @@
 package com.plannerapp.service.impl;
 
-import com.plannerapp.model.AddTaskDTO;
+import com.plannerapp.model.dto.AddTaskDTO;
+import com.plannerapp.model.dto.TaskDTO;
 import com.plannerapp.model.entity.Priority;
 import com.plannerapp.model.entity.Task;
 import com.plannerapp.model.entity.User;
@@ -12,6 +13,7 @@ import com.plannerapp.service.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class TaskServiceImpl implements TaskService {
@@ -40,15 +42,29 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Set<Task> findAllUnassignedTasks() {
-        return taskRepo.findAllByAssignedToIsNull();
+    public Set<TaskDTO> findAllUnassignedTasks() {
+        return taskRepo.findAllByAssignedToIsNull()
+                .stream()
+                .map(this::mapSongDTO)
+                .collect(Collectors.toSet());
     }
 
     @Override
-    public Set<Task> findAllAssignedTasks(Long id) {
-        return taskRepo.findAllByAssignedToId(id);
+    public Set<TaskDTO> findAllAssignedTasks(Long id) {
+        return this.taskRepo.findAllByAssignedToId(id)
+                .stream()
+                .map(this::mapSongDTO)
+                .collect(Collectors.toSet());
     }
 
+    private TaskDTO mapSongDTO(Task task) {
+        TaskDTO taskDTO = new TaskDTO();
+        taskDTO.setId(task.getId());
+        taskDTO.setDescription(task.getDescription());
+        taskDTO.setPriority(task.getPriority().getName().getValue());
+        taskDTO.setDueDate(task.getDueDate());
+        return taskDTO;
+    }
     @Override
     public void assignTaskWithId(Long taskId, Long userId) {
         User currentUser = userService.findUserById(userId).orElse(null);

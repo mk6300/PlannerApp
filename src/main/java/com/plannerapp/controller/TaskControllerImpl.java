@@ -1,7 +1,7 @@
 package com.plannerapp.controller;
 
 
-import com.plannerapp.model.AddTaskDTO;
+import com.plannerapp.model.dto.AddTaskDTO;
 import com.plannerapp.service.TaskService;
 import com.plannerapp.util.LoggedUser;
 import org.springframework.stereotype.Controller;

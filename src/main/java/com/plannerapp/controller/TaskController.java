@@ -1,6 +1,6 @@
 package com.plannerapp.controller;
 
-import com.plannerapp.model.AddTaskDTO;
+import com.plannerapp.model.dto.AddTaskDTO;
 import jakarta.validation.Valid;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;

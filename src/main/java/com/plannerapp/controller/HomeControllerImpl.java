@@ -1,5 +1,6 @@
 package com.plannerapp.controller;
 
+import com.plannerapp.model.dto.TaskDTO;
 import com.plannerapp.model.entity.Task;
 import com.plannerapp.model.entity.User;
 import com.plannerapp.service.TaskService;
@@ -42,8 +43,8 @@ public class HomeControllerImpl implements HomeController{
         User user = userService.findUserById(loggedUser.getId()).orElse(null);
         model.addAttribute("currentUserInfo", user);
 
-        Set<Task> AssignedToIsNull = taskService.findAllUnassignedTasks();
-        Set<Task> allAssignedById =taskService.findAllAssignedTasks(loggedUser.getId());
+        Set<TaskDTO> AssignedToIsNull = taskService.findAllUnassignedTasks();
+        Set<TaskDTO> allAssignedById =taskService.findAllAssignedTasks(loggedUser.getId());
 
 
         model.addAttribute("AlUnassignedTasks", AssignedToIsNull);

@@ -1,7 +1,7 @@
 package com.plannerapp.service;
 
-import com.plannerapp.model.RegisterDTO;
-import com.plannerapp.model.UserDTO;
+import com.plannerapp.model.dto.RegisterDTO;
+import com.plannerapp.model.dto.UserDTO;
 import com.plannerapp.model.entity.User;
 
 import java.util.Optional;

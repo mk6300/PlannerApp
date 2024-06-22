@@ -1,7 +1,7 @@
 package com.plannerapp.controller;
 
-import com.plannerapp.model.LoginDTO;
-import com.plannerapp.model.RegisterDTO;
+import com.plannerapp.model.dto.LoginDTO;
+import com.plannerapp.model.dto.RegisterDTO;
 import com.plannerapp.service.impl.UserServiceImpl;
 import com.plannerapp.util.LoggedUser;
 import org.springframework.stereotype.Controller;

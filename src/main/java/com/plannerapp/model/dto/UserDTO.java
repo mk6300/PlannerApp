@@ -1,4 +1,4 @@
-package com.plannerapp.model;
+package com.plannerapp.model.dto;
 
 public class UserDTO {
 

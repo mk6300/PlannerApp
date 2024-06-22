@@ -1,4 +1,4 @@
-package com.plannerapp.model;
+package com.plannerapp.model.dto;
 
 import com.plannerapp.vallidation.UniqueEmail;
 import com.plannerapp.vallidation.UniqueUsername;
