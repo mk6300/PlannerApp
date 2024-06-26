@@ -8,7 +8,6 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class RegisterDTO {
-    private Long id;
 
     @UniqueUsername
     @Size(min = 3, max = 20, message = "Username length must be between 3 and 20 characters!")
@@ -31,13 +30,6 @@ public class RegisterDTO {
     public RegisterDTO() {
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getUsername() {
         return username;
